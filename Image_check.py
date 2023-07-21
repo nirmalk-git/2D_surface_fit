@@ -224,15 +224,16 @@ def plot_2D_profile(img):
     Y = yy.flatten()
     Z = img.flatten()
     data = np.c_[X, Y, Z]
+
     # best-fit linear plane (1st-order)
     # A = np.c_[data[:, 0], data[:, 1], np.ones(data.shape[0])]
     # C, _, _, _ = scipy.linalg.lstsq(A, data[:, 2])  # coefficients
     # evaluate it on grid
     # Z = C[0] * X + C[1] * Y + C[2]
-
     # Fitting a quadratic surface
     A = np.c_[np.ones(data.shape[0]), data[:, :2], np.prod(data[:, :2], axis=1), data[:, :2] ** 2]
     C, _, _, _ = scipy.linalg.lstsq(A, data[:, 2])
+    # Subtract the residue from the image.
     print('Polynomials', C)
     check_arr = np.c_[np.ones(X.shape), X, Y, X * Y, X ** 2, Y ** 2]
     print('Check array shape', check_arr.shape)
@@ -252,8 +253,8 @@ def plot_2D_profile(img):
     # fit the surface here
     fig1 = plt.figure()
     ax = fig1.add_subplot(projection='3d')
-    surf = ax.plot_surface(xx, yy, img,  cmap=cm.coolwarm) # 'plasma')
-    ax.plot_surface(xx, yy, Reshape, cmap='plasma')
+    # surf = ax.plot_surface(xx, yy, img,  cmap=cm.coolwarm) # 'plasma')
+    surf = ax.plot_surface(xx, yy, Reshape, cmap='plasma')
     ax.set_zlim(mean_arr-2*std_arr, mean_arr+2*std_arr)
     # Add a color bar which maps values to colors.
     fig1.colorbar(surf, shrink=0.5, aspect=5)
@@ -264,3 +265,23 @@ def plot_2D_profile(img):
     ax1.set_zlim(mean_diff-2*std_diff, mean_diff+2*std_diff)
     fig2.colorbar(surf1, shrink=0.5, aspect=5)
     plt.show()
+    fig3 = plt.figure()
+    mean_diff = np.mean(difference)
+    std_diff = np.std(difference)
+    plt.imshow(difference, cmap='jet')
+    plt.clim(mean_diff - std_diff, mean_diff + std_diff)
+    plt.colorbar()
+    plt.show()
+    # divide the img array with the surface.
+    divided_surf = np.divide(img, Reshape)
+    mean_div = np.mean(divided_surf)
+    print(mean_div)
+    std_div = np.std(divided_surf)
+    print(std_div)
+    plt.imshow(divided_surf)
+    plt.clim(-2, 2)
+    plt.colorbar()
+    plt.show()
+
+
+

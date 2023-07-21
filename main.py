@@ -7,11 +7,13 @@ rot_high_img = get_corrected_img(all_path1, 'high')
 low_img = get_corrected_img(all_path2, 'low')
 rot_low_img = get_corrected_img(all_path1, 'low')
 
-plot_1D_profile(high_img)
-plot_1D_profile(low_img)
+plot_1D_profile(rot_high_img)
+plot_1D_profile(rot_low_img)
 
-plot_2D_profile(high_img)
-plot_2D_profile(low_img)
+plot_2D_profile(rot_high_img)
+plot_2D_profile(rot_low_img)
+
+
 
 
 # Sava all the images generated in this way
