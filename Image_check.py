@@ -4,6 +4,13 @@ from PIL import Image
 import scipy
 from matplotlib import cm
 
+"""This is the summary line
+
+This is the further elaboration of the docstring. Within this section,
+you can elaborate further on details as appropriate for the situation.
+Notice that the summary and the elaboration is separated by a blank new
+line.
+"""
 
 main_path = "./data/Illumination_Homogeneity"
 folder_ninety = "/ImgProj_bright_90Deg"
@@ -19,6 +26,15 @@ dark_path = main_path + dark_img_path
 
 
 def get_image(path, gain):
+    """
+    Parameters
+    ----------
+    path : str
+            relative path to the image folder.
+    gain : str
+            either 'low' or 'high' depending upon the image channel required.
+    """
+
     im = Image.open(path)
     # find th position to crop the images
     img_l = np.array(im.crop((0, 0, 4742, 4742)))
@@ -35,6 +51,16 @@ def get_image(path, gain):
 
 # Add function for showing the image in required level
 def save_image(img, path_name, img_title):
+    """
+        Parameters
+        ----------
+        img : float, array
+             The array that should be saved as an image.
+        path_name : str
+                Path name where the image should be stored.
+        img_title : str
+                Name of the image.
+        """
     # dx, dy = 1000, 1000
     print(img_title, np.mean(img))
     # img = (img/np.mean(img))
@@ -86,6 +112,14 @@ def get_mean_hist(img1, img2, img3):
 
 
 def plot_histogram(img1, label):
+    """
+            Parameters
+            ----------
+            img1 : float, array
+                 The image array to which the histogram will be computed
+            label : str
+                    The label that will be appended with the image name.
+    """
     mean1 = np.round(np.mean(img1), 3)
     # img1 = np.subtract(img1, mean1)
     m1 = np.mean(img1)
@@ -129,6 +163,14 @@ def get_mean_sections(img):
 
 
 def get_corrected_img(path, gain):
+    """
+            Parameters
+            ----------
+            path : str
+                    The path to image folder
+            gain : str
+                    'low' or 'high' depending the image channel required.
+        """
     img = get_image(path, gain)
     img = img.astype(np.int16, casting="same_kind")
     dark = get_image(dark_path, gain)
@@ -159,6 +201,12 @@ def find_std(img, mean_v):
 
 
 def plot_1D_profile(img):
+    """
+                Parameters
+                ----------
+                img : array, float
+                        The image array on which the vertical and horizontal profiles are estimated.
+    """
     m, n = img.shape
     img_hor = img[(m//2)-50: (m//2)+50, :]
     img_ver = img[:, (m//2)-50: (m//2)+50]
@@ -214,6 +262,12 @@ def plot_1D_profile(img):
 
 
 def plot_2D_profile(img):
+    """
+    Parameters
+    ----------
+    img : array, float
+        The image array on which the 2D profile is estimated.
+        """
     # plot the 3D profile of the beam.
     m, n = img.shape
     y = np.arange(0, m, 1)

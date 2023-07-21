@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Code documentation &#8212; 2D surface fit 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/agogo.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Summary" href="Summary.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">2D surface fit 01 documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="Summary.html" title="Summary"
+             accesskey="P">previous</a> |
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-Image_check">
+<span id="code-documentation"></span><h1>Code  documentation<a class="headerlink" href="#module-Image_check" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="Image_check.get_corrected_img">
+<span class="sig-prename descclassname"><span class="pre">Image_check.</span></span><span class="sig-name descname"><span class="pre">get_corrected_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Image_check.get_corrected_img" title="Permalink to this definition">¶</a></dt>
+<dd><section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>path<span class="classifier">str</span></dt><dd><p>The path to image folder</p>
+</dd>
+<dt>gain<span class="classifier">str</span></dt><dd><p>‘low’ or ‘high’ depending the image channel required.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Image_check.get_image">
+<span class="sig-prename descclassname"><span class="pre">Image_check.</span></span><span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Image_check.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id1">
+<h2>Parameters<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>path<span class="classifier">str</span></dt><dd><p>relative path to the image folder.</p>
+</dd>
+<dt>gain<span class="classifier">str</span></dt><dd><p>either ‘low’ or ‘high’ depending upon the image channel required.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Image_check.plot_1D_profile">
+<span class="sig-prename descclassname"><span class="pre">Image_check.</span></span><span class="sig-name descname"><span class="pre">plot_1D_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Image_check.plot_1D_profile" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id2">
+<h2>Parameters<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>img<span class="classifier">array, float</span></dt><dd><p>The image array on which the vertical and horizontal profiles are estimated.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Image_check.plot_2D_profile">
+<span class="sig-prename descclassname"><span class="pre">Image_check.</span></span><span class="sig-name descname"><span class="pre">plot_2D_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Image_check.plot_2D_profile" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id3">
+<h2>Parameters<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>img<span class="classifier">array, float</span></dt><dd><p>The image array on which the 2D profile is estimated.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Image_check.plot_histogram">
+<span class="sig-prename descclassname"><span class="pre">Image_check.</span></span><span class="sig-name descname"><span class="pre">plot_histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Image_check.plot_histogram" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id4">
+<h2>Parameters<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>img1<span class="classifier">float, array</span></dt><dd><p>The image array to which the histogram will be computed</p>
+</dd>
+<dt>label<span class="classifier">str</span></dt><dd><p>The label that will be appended with the image name.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Image_check.save_image">
+<span class="sig-prename descclassname"><span class="pre">Image_check.</span></span><span class="sig-name descname"><span class="pre">save_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_title</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Image_check.save_image" title="Permalink to this definition">¶</a></dt>
+<dd><section id="id5">
+<h2>Parameters<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>img<span class="classifier">float, array</span></dt><dd><p>The array that should be saved as an image.</p>
+</dd>
+<dt>path_name<span class="classifier">str</span></dt><dd><p>Path name where the image should be stored.</p>
+</dd>
+<dt>img_title<span class="classifier">str</span></dt><dd><p>Name of the image.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Table of Contents</h3>
+          <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Summary.html">Summary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code  documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Image_check.get_corrected_img"><code class="docutils literal notranslate"><span class="pre">get_corrected_img()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Image_check.get_image"><code class="docutils literal notranslate"><span class="pre">get_image()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Image_check.plot_1D_profile"><code class="docutils literal notranslate"><span class="pre">plot_1D_profile()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Image_check.plot_2D_profile"><code class="docutils literal notranslate"><span class="pre">plot_2D_profile()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Image_check.plot_histogram"><code class="docutils literal notranslate"><span class="pre">plot_histogram()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Image_check.save_image"><code class="docutils literal notranslate"><span class="pre">save_image()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="Summary.html" title="Summary"
+              >previous</a> |
+            <a href="py-modindex.html" title="Python Module Index"
+              >modules</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/code.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Nirmal Kaipachery.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
